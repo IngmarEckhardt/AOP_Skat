@@ -10,7 +10,6 @@ public class GameMaster {
 		this.deck = new Deck();
 		this.skat = new Card[2];
 		this.userInput = new UserInputImpl();
-		new CardComparator();
 	}
 
 	public void startGame() {
