@@ -6,25 +6,26 @@ import java.io.InputStreamReader;
 
 public class UserInputImpl implements UserInput {
 	private BufferedReader bufferedReader;
+	
 
 	public UserInputImpl() {
 		bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+		
 	}
 
 	@Override
 	public String getString(String message) {
-		String input = "";
-
+		String bufferedInput;
 		System.out.print(message);
 
 		try {
-			input = bufferedReader.readLine();
+			bufferedInput = bufferedReader.readLine();
 		} catch (IOException ex) {
 			System.out.println(ex.getMessage());
 			ex.printStackTrace();
 			return null;
 		}
-		return input;
+		return bufferedInput;
 	}
 
 	@Override
@@ -40,7 +41,7 @@ public class UserInputImpl implements UserInput {
 		} while (parsedInt==null);
 		return parsedInt;
 	}
-	
+		
 	@Override
 	public boolean jaNeinQuestion(String message) {
 		while (true) {
